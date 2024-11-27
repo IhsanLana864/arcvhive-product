@@ -1,0 +1,174 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Awal style untuk body dan sidebar */
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    transition: all 0.3s ease;
+}
+
+/* Container utama untuk sidebar dan konten */
+.container-fluid {
+    display: flex;
+    height: 100%;
+    padding: 0;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 0;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #343a40;
+    color: white;
+    padding-top: 20px;
+    transition: width 0.3s ease-in-out;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.3);
+    z-index: 999;
+    overflow-x: hidden;
+}
+
+/* Sidebar terbuka */
+.sidebar.open {
+    width: 250px;
+}
+
+/* Tombol close di dalam sidebar */
+.sidebar-close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.sidebar-close:hover {
+    color: #ff6b6b;
+}
+
+/* Item sidebar */
+.sidebar .nav-link {
+    color: white;
+    padding: 15px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+.sidebar .nav-link i {
+    margin-right: 10px;
+    transition: transform 0.3s ease;
+}
+
+/* Efek hover untuk link sidebar */
+.sidebar .nav-link:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    transform: scale(1.1);
+}
+
+/* Submenu collapse */
+.collapse {
+    display: none;
+}
+
+.collapse.show {
+    display: block;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+/* Animasi fade-in untuk submenu */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Tombol toggle sidebar */
+.sidebar-toggle {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 40px;
+    height: 40px;
+    background-color: #343a40;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s ease;
+}
+
+.sidebar-toggle:hover {
+    background-color: #495057;
+}
+
+/* Konten utama */
+.main-content {
+    margin-left: 0;
+    flex-grow: 1;
+    padding: 20px;
+    background-color: #f8f9fa;
+    transition: margin-left 0.3s ease;
+}
+
+/* Ketika sidebar terbuka, geser konten utama */
+.sidebar.open ~ .main-content {
+    margin-left: 250px;
+}
+
+/* Submenu dengan animasi */
+.sidebar .nav-item .collapse {
+    display: none;
+    padding-left: 15px;
+    transition: max-height 0.3s ease-out;
+}
+
+.sidebar .nav-item .collapse.show {
+    display: block;
+    animation: slideDown 0.3s ease-out;
+}
+
+/* Animasi untuk membuka submenu */
+@keyframes slideDown {
+    from {
+        max-height: 0;
+        opacity: 0;
+    }
+    to {
+        max-height: 500px;
+        opacity: 1;
+    }
+}
+
+/* Hover efek untuk link submenu */
+.sidebar .nav-item .collapse .nav-link:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Responsif untuk layar kecil */
+@media (max-width: 768px) {
+    .sidebar {
+        width: 0;
+    }
+
+    .sidebar.open {
+        width: 200px;
+    }
+
+    .main-content {
+        margin-left: 0;
+    }
+}
