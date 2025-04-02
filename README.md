@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Dashboard E-Commerce
 
 Dashboard E-Commerce adalah template berbasis PHP Laravel 11 yang dirancang untuk mengelola data dalam sebuah sistem E-Commerce. Template ini memberikan fitur utama seperti CRUD (Create, Read, Update, Delete), statistik produk dan pesanan, grafik penjualan, serta manajemen pesanan dan produk. Proyek ini dirancang khusus untuk administrator dalam mengelola sistem E-Commerce dengan antarmuka yang responsif dan user-friendly.
@@ -136,3 +137,7 @@ Akses proyek pada browser Anda melalui:
 ```
 http://localhost:8000
 ```
+=======
+# arcvhive-product
+Dashboard E-Commerce adalah template berbasis PHP Laravel 11 yang dirancang untuk membantu administrator dalam mengelola sistem e-commerce. Template ini menyediakan fitur utama seperti CRUD (Create, Read, Update, Delete) untuk produk dan pesanan, statistik produk dan pesanan, serta grafik penjualan. 
+>>>>>>> 15e42aea419d4cf0c17b8912694bf2108fce87bc
